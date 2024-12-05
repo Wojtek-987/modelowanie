@@ -515,7 +515,7 @@ Dla wybranego rozkładu t-Studenta przeprowadzono test hipotezy o równości roz
 
 \textbf{Interpretacja:} P-wartość równa 0 wskazuje na silne podstawy do odrzucenia hipotezy zerowej, że dane pochodzą z rozkładu t-Studenta z wyestymowanymi parametrami. Oznacza to, że mimo lepszego dopasowania w porównaniu z rozkładem normalnym, rozkład t-Studenta nie jest w stanie w pełni opisać danych log-zwrotów.
 
-\subsection*{Histogram logarytmicznych zwrotów}
+\subsubsection*{Histogram logarytmicznych zwrotów}
 
 \textbf{Opis:} Histogram przedstawia empiryczny rozkład logarytmicznych zwrotów danych:
 
@@ -546,6 +546,12 @@ Poniższy rozdział poświęcony jest analizie wektorów log-zwrotów trzech akc
 Zakładamy, że log-zwroty akcji spółek są realizacjami zmiennych losowych, które oznaczamy jako $W, D, V$ - kolejno: Wawel, Digitree oraz Vigo Photonics. Zakładamy, żelog-zwroty dwóch akcji są niezależnymi realizacjami wektora losowego $(X,Y)$ o nieznanej gęstości $f$, wektorze średnich $(\mu_1,\mu_2)$, współczynniku korelacji $\rho$, macierzy kowariancji $\Sigma$ i macierzy korelacji $P$.
 
 \subsection{Estymacja wektora srednich}
+Z wykorzystaniem estymatora wartosci oczekiwanej
+$$\hat{\mu}=(\overline{X}_n, \overline{Y}_n) = (\frac{1}{n}\sum_{i=1}^{n}X_i, \frac{1}{n}\sum_{i=1}^{n}Y_i)$$
+estymujemy wektor srednich log-zwrotow dla kazdej pary. Otrzymujemy nastepujace wyniki:
+$$\hat{\mu}_1=(\overline{W}_n, \overline{D}_n) =$$
+$$\hat{\mu}_2=(\overline{W}_n, \overline{V}_n) =$$
+$$\hat{\mu}_3=(\overline{V}_n, \overline{D}_n) =$$
 
 \subsection{Estymacja współczynnika korelacji}
 
