@@ -29,7 +29,7 @@
 Pierwszy rozdział zawiera analizę log-zwrotów spółki.
 
 
-\newpage\paragraph{Wykresy kursów zamknięcia oraz log-zwrotów:}
+\newpage\subsubsection{Wykresy kursów zamknięcia oraz log-zwrotów:}
 Poniższy wykres ilustruje zmianę cen zamknięcia akcji w czasie.
 
 \centerline{\includegraphics[width=1\textwidth]{./Kajtek/img/kursy_zamkniecia_plot.png}}
@@ -43,18 +43,18 @@ gdzie $s_0, s_1, ..., s_n$ są kursami zamknięcia z kolejnych dni, na osi czasu
 \centerline{\includegraphics[width=1\textwidth]{./Kajtek/img/log_zwroty_plot.png}}
 
 
-\paragraph{Wartość oczekiwana:}
+\subsubsection{Wartość oczekiwana:}
 Zakładając, że log-zwroty $r_1, r_2, ..., r_n$ są niezależnymi realizacjami zmiennej losowej X, wyliczamy $\mu$ przy użyciu nieobciążonego estymatora wartości oczekiwanej:
 $$ E(\overline{X}_n) = \frac{1}{n}\sum_{i=1}^{n}X_i = \mu $$
 w wyniku czego otrzymujemy wynik 
 $$\mu = -0.0006787669$$
 
 
-\paragraph{Wariancja i odchylenie standardowe:}
+\subsubsection{Wariancja i odchylenie standardowe:}
 Korzystając ze wzoru na nieobciążony estymator wariancji
 $$\sigma^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_i - \overline{X}_n)^{2}$$
 otrzymujemy $\sigma^{2}=0.0006189792$ oraz $\sigma=0.02487929$.
-\paragraph{Kwantyle:}
+\subsubsection{Kwantyle:}
 Z wykorzystaniem klasycznego estymatora kwantyli wyestymowano kwantyle rzędu $\alpha = 5\%, 50\% i 95\%$. Wyniki przedstawione zostaly w tabeli poniżej:
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -65,14 +65,14 @@ Z wykorzystaniem klasycznego estymatora kwantyli wyestymowano kwantyle rzędu $\
 \end{center}
 
 
-\paragraph{Histogram log-zwrotów:}
+\subsubsection{Histogram log-zwrotów:}
 Na histogramie dziennych log-zwrotów cen akcji na czerwono i niebiesko oznaczono odpowiednio wartość wyestymowanej średniej oraz wartości kwantyli przedstawionych wcześniej.
 
 \centerline{\includegraphics[width=1\textwidth]{./Kajtek/img/histogram_zwrotow.png}}
 
 
 \newpage
-\paragraph{Dystrybuanta:}
+\subsubsection{Dystrybuanta:}
 Z wykorzystaniem dystrybuanty empirycznej jako nieobciążonego estymatora 
 
 $$\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^{n} 1_\{x_i \leq x\} = \left(\frac{\text{liczba  elementów  w  próbie} \leq x}{n}\right)$$
@@ -80,7 +80,7 @@ estymujemy dystrybuantę F zaprezentowaną na wykresie poniżej
 
 \centerline{\includegraphics[width=1\textwidth]{./Kajtek/img/dystrybuanta.png}}
 
-\paragraph{Analiza dobroci dopasowania rozkładu normalnego i t-Studenta:}
+\subsubsection{Analiza dobroci dopasowania rozkładu normalnego i t-Studenta:}
 Korzystając z \textbf{estymatora największej wiarygodności (MLE)} parametru estymujemy parametry rozkładu normalnego i t-Studenta.
 
 % zapisac tu wzory
@@ -102,7 +102,7 @@ Na ich podstawie można stwierdzić, że rozkład normalny lepiej dopasowuje si�
 
 
 \newpage
-\paragraph{Weryfikacja wyboru z wykorzystainem statystyk oraz kryteriów informacyjnych:}
+\subsubsection{Weryfikacja wyboru z wykorzystainem statystyk oraz kryteriów informacyjnych:}
 Poniższe tabele prezentują wyniki testów statystycznych oraz kryteriów informacyjnych dla rozkładów normalnego i t-Studenta.
 
 \begin{center}
@@ -127,7 +127,7 @@ Poniższe tabele prezentują wyniki testów statystycznych oraz kryteriów infor
 Powyższe wyniki potwierdzają, że rozkład normalny lepiej dopasowuje się do danych.
 
 
-\paragraph{Test hipotezy równości rozkładów metodą Monte Carlo:}
+\subsubsection{Test hipotezy równości rozkładów metodą Monte Carlo:}
 Testujemy hipotezę zerową o równości dystrybuant
 $$H_0: F = F_0$$
 przeciwko hipotezie alternatywnej (kontrhipotezie)
@@ -152,7 +152,7 @@ Digitree to polska spółka technologiczna specjalizująca się w kompleksowych 
 
 \subsubsection{Analiza log-zwrotów spółki DIGITREE}
 
-\paragraph{Spółka DIGITREE:}
+\subsubsection{Spółka DIGITREE:}
 Poniżej przedstawiam wykres kursów zamknięcia wybranej spółki
 
 \centerline{\includegraphics[width=14cm]{./Janek/zamkniecie.png}}
@@ -161,7 +161,7 @@ Poniżej przedstawiam wykres log-zwrotów wybranej spółki
 
 \centerline{\includegraphics[width=14cm]{./Janek/logzwroty.png}}
 
-\paragraph{Podstawowa analiza statystyczna log-zwrotów:}
+\subsubsection{Podstawowa analiza statystyczna log-zwrotów:}
 
 Wartości log-zwrotów zostały obliczone jako różnice logarytmiczne dziennych kursów zamknięcia. Poniżej przedstawiono podstawowe statystyki log-zwrotów:
 \begin{itemize}
@@ -182,13 +182,13 @@ $\overline{x}_n$ & $s^2_n$ & $s_n$ & $q(5\%)$ & $q(50\%)$ & $q(95\%)$ \\ \hline
 
 Kwantyle 5%, 50%, i 95% przedstawiają odpowiednio wartości, poniżej których znajduje się odpowiednio 5%, 50%, i 95% log-zwrotów. Na przykład, wartość kwantyla 5% oznacza, że 5% log-zwrotów jest mniejszych od -0.0669.
 
-\paragraph{Histogram log-zwrotów z zaznaczoną średnią i kwantylami:}
+\subsubsection{Histogram log-zwrotów z zaznaczoną średnią i kwantylami:}
 
 Poniżej zamieszczono histogram log-zwrotów z zaznaczonymi wartościami średniej oraz kwantyli 5%, 50% i 95%.
 
 \centerline{\includegraphics[width=14cm]{./Janek/histogram logzwrotow.png}}
 
-\paragraph{Dystrybuanta empiryczna log-zwrotów:}
+\subsubsection{Dystrybuanta empiryczna log-zwrotów:}
 
 Estymacja dystrybuanty empirycznej dla log-zwrotów została przeprowadzona przy użyciu wzoru empirycznej dystrybuanty $F_n(x)$. Wykres dystrybuanty empirycznej log-zwrotów znajduje się poniżej.
 
@@ -196,7 +196,7 @@ Estymacja dystrybuanty empirycznej dla log-zwrotów została przeprowadzona przy
 
 \subsubsection{Analiza dobroci dopasowania rozkładów}
 
-\paragraph{Estymacja parametrów rozkładu normalnego i t-Studenta:}
+\subsubsection{Estymacja parametrów rozkładu normalnego i t-Studenta:}
 
 Parametry rozkładu normalnego i t-Studenta zostały wyestymowane przy użyciu estymatora największej wiarygodności (MLE):
 \begin{itemize}
@@ -204,7 +204,7 @@ Parametry rozkładu normalnego i t-Studenta zostały wyestymowane przy użyciu e
     \item Rozkład t-Studenta: liczba stopni swobody = 307.2041
 \end{itemize}
 
-\paragraph{Wykresy diagnostyczne:}
+\subsubsection{Wykresy diagnostyczne:}
 
 Poniżej przedstawiono wykresy diagnostyczne dla dopasowania rozkładów normalnego i t-Studenta do danych log-zwrotów, umożliwiające ocenę jakości dopasowania.
 
@@ -223,7 +223,7 @@ Na podstawie wykresów diagnostycznych oraz statystyk dopasowania:
 
 Wyniki sugerują, że rozkład normalny lepiej dopasowuje się do danych log-zwrotów niż rozkład t-Studenta. Wybór rozkładu normalnego uzasadniają niższe wartości AIC i BIC oraz lepsze dopasowanie na wykresach diagnostycznych.
 
-\paragraph{Test hipotezy o równości rozkładów:}
+\subsubsection{Test hipotezy o równości rozkładów:}
 
 Przeprowadzono test hipotezy o równości rozkładów dla wybranego rozkładu normalnego, wykorzystując statystykę Kolmogorova-Smirnova (KS). Wyniki testu przedstawiono poniżej:
 
@@ -331,11 +331,11 @@ Dystrybuanta empiryczna została przedstawiona na wykresie poniżej:
 
 \subsubsection{Analiza dobroci dopasowania rozkładu normalnego i t-Studenta}
 
-\paragraph{Estymacja parametrów:}
+\subsubsection{Estymacja parametrów:}
 
 Wykorzystując estymator największej wiarygodności (MLE) oraz bibliotekę \texttt{fitdistrplus} w R, wyestymowano parametry rozkładu normalnego i t-Studenta dla danych log-zwrotów.
 
-\paragraph{Rozkład normalny}
+\subsubsection{Rozkład normalny}
 
 \begin{table}[H]
     \centering
@@ -351,7 +351,7 @@ Wykorzystując estymator największej wiarygodności (MLE) oraz bibliotekę \tex
     \label{tab:fit_norm}
 \end{table}
 
-\paragraph{Rozkład t-Studenta}
+\subsubsection{Rozkład t-Studenta}
 
 \begin{table}[H]
     \centering
@@ -370,7 +370,7 @@ Wykorzystując estymator największej wiarygodności (MLE) oraz bibliotekę \tex
 
 \subsubsection{Wykresy diagnostyczne}
 
-\paragraph{Histogram z nałożonymi gęstościami}
+\subsubsection{Histogram z nałożonymi gęstościami}
 
 \begin{figure}[H]
     \centering
@@ -386,7 +386,7 @@ Analiza wykazuje, że:
     \item Rozkład t-Studenta (czerwony) jest znacząco niedopasowany.
 \end{itemize}
 
-\paragraph{Wykres kwantyl-kwantyl (Q-Q plot)}
+\subsubsection{Wykres kwantyl-kwantyl (Q-Q plot)}
 
 \begin{figure}[H]
     \centering
@@ -402,7 +402,7 @@ Na wykresie zauważalne są następujące cechy:
     \item Rozkład t-Studenta (czerwony) znacznie odstaje od linii prostej, wskazując na niedopasowanie tego rozkładu do danych.
 \end{itemize}
 
-\paragraph{Porównanie dystrybuant (CDF)}
+\subsubsection{Porównanie dystrybuant (CDF)}
 
 \begin{figure}[H]
     \centering
@@ -418,7 +418,7 @@ Główne obserwacje:
     \item Dystrybuanta rozkładu t-Studenta (czerwona linia przerywana) wykazuje znaczne rozbieżności, co wskazuje na niedopasowanie.
 \end{itemize}
 
-\paragraph{Wykres P-P (Probability-Probability plot)}
+\subsubsection{Wykres P-P (Probability-Probability plot)}
 
 \begin{figure}[H]
     \centering
@@ -515,7 +515,7 @@ Dla wybranego rozkładu t-Studenta przeprowadzono test hipotezy o równości roz
 
 \textbf{Interpretacja:} P-wartość równa 0 wskazuje na silne podstawy do odrzucenia hipotezy zerowej, że dane pochodzą z rozkładu t-Studenta z wyestymowanymi parametrami. Oznacza to, że mimo lepszego dopasowania w porównaniu z rozkładem normalnym, rozkład t-Studenta nie jest w stanie w pełni opisać danych log-zwrotów.
 
-\subsection*{Histogram logarytmicznych zwrotów}
+\subsubsection*{Histogram logarytmicznych zwrotów}
 
 \textbf{Opis:} Histogram przedstawia empiryczny rozkład logarytmicznych zwrotów danych:
 
@@ -526,7 +526,7 @@ Dla wybranego rozkładu t-Studenta przeprowadzono test hipotezy o równości roz
     \label{fig:histogram_log_returns}
 \end{figure}
 
-\newpage\paragraph{Podsumowanie:}
+\newpage\subsubsection{Podsumowanie:}
 
 Przeprowadzona analiza log-zwrotów akcji spółki Wawel SA wykazała, że:
 
@@ -539,5 +539,99 @@ Przeprowadzona analiza log-zwrotów akcji spółki Wawel SA wykazała, że:
 \end{itemize}
 
 \newpage\section{Analiza łącznego rozkładu log-zwrotów}
+
+\subsection{Wstęp}
+Poniższy rozdział poświęcony jest analizie wektorów log-zwrotów trzech akcji spółek: Wawel SA, Digitree oraz Vigo Photonics. Analiza zostanie przeprowadzona na parach spółek, tak aby zbadać zależności między każdą z nich.
+
+Zakładamy, że log-zwroty akcji spółek są realizacjami zmiennych losowych, które oznaczamy jako $W, D, V$ - kolejno: Wawel, Digitree oraz Vigo Photonics. Zakładamy, żelog-zwroty dwóch akcji są niezależnymi realizacjami wektora losowego $(X,Y)$ o nieznanej gęstości $f$, wektorze średnich $(\mu_1,\mu_2)$, współczynniku korelacji $\rho$, macierzy kowariancji $\Sigma$ i macierzy korelacji $P$.
+
+\subsection{Estymacja wektora srednich}
+Z wykorzystaniem estymatora wartości oczekiwanej
+$$\hat{\mu}=(\overline{X}_n, \overline{Y}_n) = (\frac{1}{n}\sum_{i=1}^{n}X_i, \frac{1}{n}\sum_{i=1}^{n}Y_i)$$
+estymujemy wektor średnich log-zwrotów dla każdej pary. Otrzymujemy następujące wyniki:
+$$\hat{\mu}_1=(\overline{W}_n, \overline{D}_n) =$$
+$$\hat{\mu}_2=(\overline{W}_n, \overline{V}_n) =$$
+$$\hat{\mu}_3=(\overline{V}_n, \overline{D}_n) =$$
+
+\subsection{Estymacja współczynnika korelacji}
+Korzystając z estymatora współczynnika korelacji
+$$\hat{\rho}=R_{xy}=\frac{S_{xy}}{S_x\cdot S_y}=\frac{\sum_{i=1}^{n}(X_i-\overline{X}_n)(Y_i-\overline{Y}_n)}{\sqrt{\sum_{i=1}^{n}(X_i-\overline{X}_n)^{2}}\sqrt{\sum_{i=1}^{n}(Y_i-\overline{Y}_n)^{2}}},$$
+gdzie $S_x^{2}$ i $S_y^{2}$ są nieobciążonymi estymatorami wariancji
+$$S^2_x=\sigma_1^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X}_n)^2, S^2_y=\sigma_2^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\overline{Y}_n)^2$$ 
+wyestymowujemy współczynnik korelacji dla każdej pary. Otrzymujemy następujące wyniki:
+$$\hat{\rho}_1=R_{wd}=$$
+$$\hat{\rho}_2=R_{wv}=$$
+$$\hat{\rho}_3=R_{vd}=$$
+
+
+\subsection{Estymacja macierzy kowariancji}
+Korzystając z estymatora macierzy kowariancji
+$$
+\hat{\Sigma}=
+\begin{bmatrix}
+    S^2_x & S^2_{xy} \\
+    S^2_{xy} & S^2_y
+\end{bmatrix}
+$$
+estymujemy macierz kowariancji dla każdej pary. Otrzymujemy następujące wyniki:
+$$
+\hat{\Sigma}_1=
+\begin{bmatrix}
+    S^2_w & S^2_{wd} \\
+    S^2_{wd} & S^2_d
+\end{bmatrix}
+=
+$$
+$$
+\hat{\Sigma}_2=
+\begin{bmatrix}
+    S^2_w & S^2_{wv} \\
+    S^2_{wv} & S^2_v
+\end{bmatrix}
+=
+$$
+$$
+\hat{\Sigma}_3=
+\begin{bmatrix}
+    S^2_v & S^2_{vd} \\
+    S^2_{vd} & S^2_d
+\end{bmatrix}
+=
+$$
+
+
+\subsection{Estymacja macierzy korelacji}
+Macierze korelacji
+$$R=
+\begin{bmatrix}
+    1 & \rho \\
+    \rho & 1 
+\end{bmatrix}$$
+dla każdej z par wyglądają następująco:
+$$R_1=$$
+$$R_2=$$
+$$R_3=$$
+
+
+\subsection{Wykres rozrzutu z histogramami rozkładów brzegowych}
+Poniżej przedstawiony został wykres rozrzutu z histogramami rozkładów brzegowych:
+
+
+\subsection{Wzór gęstości rozkładu normalnego}
+Wzór gęstości rozkładu normalnego o wyestymowanych wcześniej parametrach:
+$$f(x_1,x_2)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left[\frac{(x_1-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2}+\frac{(x_2-\mu_2)^2}{\sigma_2^2}\right]\right)$$
+dla każdej z par wygląda następująco:
+$$f(w,d)=$$
+$$f(w,v)=$$
+$$f(v,d)=$$
+Wykresy gęstości łącznej prezentują się następująco:
+
+
+\subsection{Wzory gęstości rozkładów brzegowych}
+Korzystając z zależności
+$$f_1(x)=\int_{-\infty}^{\infty}f(x,y)dy, f_2(y)=\int_{-\infty}^{\infty}f(x,y)dx,$$
+wyznaczamy wzory gęstości rozkładów brzegowych dla każdej pary.\\ Otrzymujemy:
+
+\subsection{Wstępna ocena dobroci rozkładu normalnego z wyestymowanymi parametrami}
 
 \end{document}
