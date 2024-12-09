@@ -1,3 +1,5 @@
+# Updated wspolne (1).r based on GaussWielowymiarowy_wyklad_2024.R
+# Integrated and improved sections
 # Wczytanie niezbędnych bibliotek
 library(fitdistrplus)
 library(ggplot2)
@@ -96,3 +98,77 @@ par(mfrow = c(1, 2))
 plot(log_returns$akcja1, log_returns$akcja2, main = "Dane Empiryczne", xlab = "Log-zwroty Akcji 1", ylab = "Log-zwroty Akcji 2")
 plot(generated_sample$akcja1, generated_sample$akcja2, main = "Wygenerowana Próba", xlab = "Log-zwroty Akcji 1", ylab = "Log-zwroty Akcji 2")
 
+
+# Additions from GaussWielowymiarowy_wyklad_2024.R
+#Rozkład normalny wielowymiarowy
+library(ggplot2)
+library(ggExtra)
+library(mnormt)
+library(MASS)
+library(QRM)
+library(evir)
+
+#Przyklad 1 a)
+#==========
+#Wykresy gestosci: N(0,0,1,1,-0.7),N(0,0,1,1,0),N(0,0,1,1,0.7),N(0,0,1,1,0.9)
+
+#wartosc oczekiwana
+mu    <- c(0, 0)  
+
+#macierz kowariancji
+Sigma_list <- list(
+  S1 <- matrix(c(1, -0.7, 
+                -0.7, 1), nrow = 2),
+  S2 <- matrix(c(1, 0, 
+                 0, 1), nrow = 2),
+  S3 <- matrix(c(1, 0.7, 
+                 0.7, 1), nrow = 2),
+  S4 <- matrix(c(1, 0.9, 
+                 0.9, 1), nrow = 2)
+)
+
+par(mfrow=c(2,2))
+
+for(Sigma in Sigma_list){
+
+#siatka punktow (korzystamy z reguly trzech sigm, dla rozkladu normalnego)
+s1 <- s2 <-  1  #odchylenia standardowe 
+x     <- seq(-3*s1, 3*s1, 0.25) 
+y     <- seq(-3*s2, 3*s2, 0.25)
+
+#gestosc i wartosci gestosci na siatce
+f     <- function(x, y) dmnorm(cbind(x, y), mu, Sigma)  
+z     <- outer(x, y, f)  
+
+#wykres gestosci
+persp(x, y, z, theta = -30, phi = 25, 
+      shade = 0.75, col = "lightblue", expand = 0.5, r = 2, 
+      ltheta = 25, ticktype = "detailed")
+}
+
+#b) Geenerowanie z rozkladu w bibliotece 'mnormt'
+set.seed(100)
+
+par(mfrow=c(2,2))
+
+# Scatter Plot Addition
+
+# Scatter plot based on GaussWielowymiarowy_wyklad_2024.R
+library(ggplot2)
+library(ggExtra)
+
+# Example data for scatter plot
+set.seed(100)
+mu <- c(0, 0)
+Sigma <- matrix(c(1, 0.5, 0.5, 1), nrow = 2)
+Z <- MASS::mvrnorm(1000, mu = mu, Sigma = Sigma)
+
+Z <- as.data.frame(Z)
+colnames(Z) <- c('x', 'y')
+
+# Scatter plot with marginal histograms
+p <- ggplot(Z, aes(x = x, y = y)) + geom_point()
+p2 <- ggMarginal(p, type = "histogram")
+
+# Save the plot
+ggsave("scatter_plot.png", plot = p2, width = 8, height = 6)
