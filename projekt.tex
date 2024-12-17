@@ -161,14 +161,24 @@ Poniżej przedstawiam wykres log-zwrotów wybranej spółki
 
 \centerline{\includegraphics[width=14cm]{./Janek/logzwroty.png}}
 
+wyliczonych według wzoru:
+
+$$ r_1 = \ln\frac{S_0}{S_1}, r_2 = \ln\frac{S_2}{S_1}, ..., r_n = \ln\frac{S_n}{S_{n-1}} $$
+
+gdzie $s_0, s_1, ..., s_n$ są kursami zamknięcia z kolejnych dni.
+
 \subsubsection{Podstawowa analiza statystyczna log-zwrotów:}
 
 Wartości log-zwrotów zostały obliczone jako różnice logarytmiczne dziennych kursów zamknięcia. Poniżej przedstawiono podstawowe statystyki log-zwrotów:
-\begin{itemize}
-    \item Średnia log-zwrotów: $\overline{x}_n = 0.0005507787$
-    \item Wariancja log-zwrotów: $s^2_n = 0.0022445$
-    \item Odchylenie standardowe log-zwrotów: $s_n = 0.04737616$
-\end{itemize}
+
+Zakładając, że log-zwroty $r_1, r_2, ..., r_n$ są niezależnymi realizacjami zmiennej losowej X, wyliczamy $\mu$ przy użyciu nieobciążonego estymatora wartości oczekiwanej:
+$$ E(\overline{X}_n) = \frac{1}{n}\sum_{i=1}^{n}X_i = \mu $$
+w wyniku czego otrzymujemy wynik 
+$$\mu = 0.0005507787$$
+
+Korzystając ze wzoru na nieobciążony estymator wariancji
+$$\sigma^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_i - \overline{X}_n)^{2}$$
+otrzymujemy $\sigma^{2}=0.0022445$ oraz $\sigma=0.04737616$.
 
 \begin{table}[h!]
 \centering
@@ -180,17 +190,20 @@ $\overline{x}_n$ & $s^2_n$ & $s_n$ & $q(5\%)$ & $q(50\%)$ & $q(95\%)$ \\ \hline
 \end{tabular}
 \end{table}
 
-Kwantyle 5%, 50%, i 95% przedstawiają odpowiednio wartości, poniżej których znajduje się odpowiednio 5%, 50%, i 95% log-zwrotów. Na przykład, wartość kwantyla 5% oznacza, że 5% log-zwrotów jest mniejszych od -0.0669.
+Kwantyle 5\%, 50\%, i 95\% przedstawiają odpowiednio wartości, poniżej których znajduje się odpowiednio 5\%, 50\%, i 95\% log-zwrotów. Na przykład, wartość kwantyla 5\% oznacza, że 5\% log-zwrotów jest mniejszych od -0.0669.
 
 \subsubsection{Histogram log-zwrotów z zaznaczoną średnią i kwantylami:}
 
-Poniżej zamieszczono histogram log-zwrotów z zaznaczonymi wartościami średniej oraz kwantyli 5%, 50% i 95%.
+Poniżej zamieszczono histogram log-zwrotów z zaznaczonymi wartościami średniej oraz kwantyli 5\%, 50\% i 95\%.
 
 \centerline{\includegraphics[width=14cm]{./Janek/histogram logzwrotow.png}}
 
 \subsubsection{Dystrybuanta empiryczna log-zwrotów:}
 
-Estymacja dystrybuanty empirycznej dla log-zwrotów została przeprowadzona przy użyciu wzoru empirycznej dystrybuanty $F_n(x)$. Wykres dystrybuanty empirycznej log-zwrotów znajduje się poniżej.
+Estymacja dystrybuanty empirycznej dla log-zwrotów została przeprowadzona przy użyciu wzoru empirycznej dystrybuanty $F_n(x)$:
+
+$$\hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^{n} 1_\{x_i \leq x\} = \left(\frac{\text{liczba  elementów  w  próbie} \leq x}{n}\right)$$
+wykres dystrybuanty empirycznej log-zwrotów znajduje się poniżej.
 
 \centerline{\includegraphics[width=14cm]{./Janek/empiryczna dystrybuanta.png}} 
 
@@ -225,7 +238,7 @@ Wyniki sugerują, że rozkład normalny lepiej dopasowuje się do danych log-zwr
 
 \subsubsection{Test hipotezy o równości rozkładów:}
 
-Przeprowadzono test hipotezy o równości rozkładów dla wybranego rozkładu normalnego, wykorzystując statystykę Kolmogorova-Smirnova (KS). Wyniki testu przedstawiono poniżej:
+Przeprowadzono test hipotezy o równości rozkładów dla wybranego rozkładu normalnego, wykorzystując statystykę Kolmogorova-Smirnova (KS) z wykorzystaniem N = 10000 prób z rozkładu normalnego. Wyniki testu przedstawiono poniżej:
 
 \begin{itemize}
     \item \textbf{Statystyka testowa \( D \):} Obliczona wartość wynosi \( D = 0.1561313 \). Statystyka \( D \) mierzy maksymalną różnicę pomiędzy dystrybuantą empiryczną danych a teoretyczną dystrybuantą rozkładu normalnego. Wysoka wartość \( D \) wskazuje na większą różnicę, co może sugerować, że dane nie pochodzą z badanego rozkładu.
