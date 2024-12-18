@@ -671,17 +671,25 @@ Poniżej przedstawione zostały wykresy rozrzutów z histogramami rozkładów br
 
 Punkty koncentrują się w okolicach wartości zerowych, sugerując niewielkie wahania dzienne. Rozkłady pozostają stabilne, a obserwacje nie wskazują na znaczące zniekształcenia lub nieliniowości.
 
-\subsection{Wzór gęstości rozkładu normalnego}
+\newpage\subsection{Wzór gęstości rozkładu normalnego}
 Wzór gęstości rozkładu normalnego o wyestymowanych wcześniej parametrach:
 $$f(x_1,x_2)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left[\frac{(x_1-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2}+\frac{(x_2-\mu_2)^2}{\sigma_2^2}\right]\right)$$
 dla każdej z par wygląda następująco:
 
-$$f(w,d)=\frac{1}{0.005300327}
-\exp\left(-\frac{1}{1.999372} 
-\left[\frac{(x_1-0.0014818927)^2}{3.157575e-04}-0.05011604\frac{(x_1-0.0014818927)(x_2-0.0005527318)}{0.0008438382}+\frac{(x_2-0.0005527318)^2}{2.255094e-03}\right]\right)$$
+\begin{multline}
+    f(w,d)=\frac{1}{0.005300327} 
+    \exp(-\frac{1}{1.999372} 
+    [\frac{(x_1-0.0014818927)^2}{3.157575e-04}\\ -0.05011604\frac{(x_1-0.0014818927)(x_2-0.0005527318)}{0.0008438382}+\frac{(x_2-0.0005527318)^2}{2.255094e-03})
+\end{multline}
 
-$$f(w,v)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left[\frac{(x_1-\mu_1)^2}{3.157575e-04}-2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2}+\frac{(x_2-\mu_2)^2}{\sigma_2^2}\right]\right)$$
-$$f(v,d)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left[\frac{(x_1-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2}+\frac{(x_2-\mu_2)^2}{\sigma_2^2}\right]\right)$$
+\begin{multline}
+    f(w,v)=\frac{1}{0.003546984}\exp(-\frac{1}{1.984239}[\frac{(x_1-0.001481893)^2}{3.157575e-04}\\ -0.177545\frac{(x_1-0.001481893)(x_2-(-0.001203487))}{0.0005667577}+\frac{(x_2-(-0.001203487))^2}{0.0010172816}])
+\end{multline}
+
+\begin{multline}
+    f(v,d)=\frac{1}{0.009465047}\exp(-\frac{1}{1.978381}[\frac{(x_1-(-0.0012034874))^2}{0.0010172816}\\-0.2079392\frac{(x_1-(-0.0012034874))(x_2-0.0005527318)}{0.001514617}+\frac{(x_2-0.0005527318)^2}{0.0022550944}])
+\end{multline}
+
 \newpage Wykresy gęstości łącznej prezentują się następująco:
 
 \begin{figure}[!htb]
