@@ -562,9 +562,9 @@ Zakładamy, że log-zwroty akcji spółek są realizacjami zmiennych losowych, k
 Z wykorzystaniem estymatora wartości oczekiwanej
 $$\hat{\mu}=(\overline{X}_n, \overline{Y}_n) = (\frac{1}{n}\sum_{i=1}^{n}X_i, \frac{1}{n}\sum_{i=1}^{n}Y_i)$$
 estymujemy wektor średnich log-zwrotów dla każdej pary. Otrzymujemy następujące wyniki:
-$$\hat{\mu}_1=(\overline{W}_n, \overline{D}_n) =$$
-$$\hat{\mu}_2=(\overline{W}_n, \overline{V}_n) =$$
-$$\hat{\mu}_3=(\overline{V}_n, \overline{D}_n) =$$
+$$\hat{\mu}_1=(\overline{W}_n, \overline{D}_n) = (0.0014818927, 0.0005527318)$$
+$$\hat{\mu}_2=(\overline{W}_n, \overline{V}_n) = (0.001481893, -0.001203487)$$
+$$\hat{\mu}_3=(\overline{V}_n, \overline{D}_n) = (-0.0012034874, 0.0005527318)$$
 
 \subsection{Estymacja współczynnika korelacji}
 Korzystając z estymatora współczynnika korelacji
@@ -572,9 +572,9 @@ $$\hat{\rho}=R_{xy}=\frac{S_{xy}}{S_x\cdot S_y}=\frac{\sum_{i=1}^{n}(X_i-\overli
 gdzie $S_x^{2}$ i $S_y^{2}$ są nieobciążonymi estymatorami wariancji
 $$S^2_x=\sigma_1^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X}_n)^2, S^2_y=\sigma_2^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\overline{Y}_n)^2$$ 
 wyestymowujemy współczynnik korelacji dla każdej pary. Otrzymujemy następujące wyniki:
-$$\hat{\rho}_1=R_{wd}=$$
-$$\hat{\rho}_2=R_{wv}=$$
-$$\hat{\rho}_3=R_{vd}=$$
+$$\hat{\rho}_1=R_{wd}=0.02505802$$
+$$\hat{\rho}_2=R_{wv}=0.0887725$$
+$$\hat{\rho}_3=R_{vd}=0.1039696$$
 
 \subsection{Estymacja macierzy kowariancji}
 Korzystając z estymatora macierzy kowariancji
@@ -593,6 +593,10 @@ $$
     S^2_{wd} & S^2_d
 \end{bmatrix}
 =
+\begin{bmatrix}
+    3.157575e-04 & 2.114492e-05 \\
+    2.114492e-05 & 2.255094e-03
+\end{bmatrix}
 $$
 $$
 \hat{\Sigma}_2=
@@ -601,6 +605,10 @@ $$
     S^2_{wv} & S^2_v
 \end{bmatrix}
 =
+\begin{bmatrix}
+    0.0003157575 & 0.0000503125 \\
+    0.0000503125 & 0.0010172816
+\end{bmatrix}
 $$
 $$
 \hat{\Sigma}_3=
@@ -609,6 +617,10 @@ $$
     S^2_{vd} & S^2_d
 \end{bmatrix}
 =
+\begin{bmatrix}
+    0.0010172816 & 0.0001574742 \\
+    0.0001574742 & 0.0022550944
+\end{bmatrix}
 $$
 
 \subsection{Estymacja macierzy korelacji}
@@ -619,9 +631,27 @@ $$R=
     \rho & 1 
 \end{bmatrix}$$
 dla każdej z par wyglądają następująco:
-$$R_1=$$
-$$R_2=$$
-$$R_3=$$
+$$
+R_{wd}=
+\begin{bmatrix}
+    1 & 0.02505802 \\
+    0.02505802 & 1
+\end{bmatrix}
+$$
+$$
+R_{wv}=
+\begin{bmatrix}
+    1 & 0.0887725 \\
+    0.0887725 & 1
+\end{bmatrix}
+$$
+$$
+R_{vd}=
+\begin{bmatrix}
+    1 & 0.1039696 \\
+    0.1039696 & 1
+\end{bmatrix}
+$$
 
 \newpage\subsection{Wykresy rozrzutów z histogramami rozkładów brzegowych}
 Poniżej przedstawione zostały wykresy rozrzutów z histogramami rozkładów brzegowych dla każdej z par spółek:
@@ -641,14 +671,26 @@ Poniżej przedstawione zostały wykresy rozrzutów z histogramami rozkładów br
 
 Punkty koncentrują się w okolicach wartości zerowych, sugerując niewielkie wahania dzienne. Rozkłady pozostają stabilne, a obserwacje nie wskazują na znaczące zniekształcenia lub nieliniowości.
 
-\subsection{Wzór gęstości rozkładu normalnego}
+\newpage\subsection{Wzór gęstości rozkładu normalnego}
 Wzór gęstości rozkładu normalnego o wyestymowanych wcześniej parametrach:
 $$f(x_1,x_2)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left(-\frac{1}{2(1-\rho^2)}\left[\frac{(x_1-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2}+\frac{(x_2-\mu_2)^2}{\sigma_2^2}\right]\right)$$
 dla każdej z par wygląda następująco:
-$$f(w,d)=$$
-$$f(w,v)=$$
-$$f(v,d)=$$
-Wykresy gęstości łącznej prezentują się następująco:
+
+\begin{multline}
+    f(w,d)=\frac{1}{0.005300327} 
+    \exp(-\frac{1}{1.999372} 
+    [\frac{(x_1-0.0014818927)^2}{3.157575e-04}\\ -0.05011604\frac{(x_1-0.0014818927)(x_2-0.0005527318)}{0.0008438382}+\frac{(x_2-0.0005527318)^2}{2.255094e-03})
+\end{multline}
+
+\begin{multline}
+    f(w,v)=\frac{1}{0.003546984}\exp(-\frac{1}{1.984239}[\frac{(x_1-0.001481893)^2}{3.157575e-04}\\ -0.177545\frac{(x_1-0.001481893)(x_2-(-0.001203487))}{0.0005667577}+\frac{(x_2-(-0.001203487))^2}{0.0010172816}])
+\end{multline}
+
+\begin{multline}
+    f(v,d)=\frac{1}{0.009465047}\exp(-\frac{1}{1.978381}[\frac{(x_1-(-0.0012034874))^2}{0.0010172816}\\-0.2079392\frac{(x_1-(-0.0012034874))(x_2-0.0005527318)}{0.001514617}+\frac{(x_2-0.0005527318)^2}{0.0022550944}])
+\end{multline}
+
+\newpage Wykresy gęstości łącznej prezentują się następująco:
 
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
@@ -665,13 +707,16 @@ Wykresy gęstości łącznej prezentują się następująco:
 
 Każdy wykres to trójwymiarowa powierzchnia, gdzie na osi poziomej oraz głębokościowej (x i y) umieszczono wartości logarytmicznych zmian cen poszczególnych spółek, a na osi pionowej (z) zaprezentowano wartość gęstości prawdopodobieństwa wynikającą z przyjętego modelu rozkładu normalnego dwuwymiarowego. Kształt powierzchni z wyraźnym szczytem sugeruje, że najbardziej prawdopodobne wartości to niewielkie dzienne zmiany cen obu analizowanych aktywów. W miarę oddalania się od punktu (0,0) w stronę większych lub mniejszych stóp zwrotu, wysokość powierzchni opada, wskazując na mniejsze prawdopodobieństwo wystąpienia takich skrajnych zdarzeń. 
 
-\subsection{Wzory gęstości rozkładów brzegowych}
-Korzystając z zależności
-$$f_1(x)=\int_{-\infty}^{\infty}f(x,y)dy, f_2(y)=\int_{-\infty}^{\infty}f(x,y)dx,$$
-wyznaczamy wzory gęstości rozkładów brzegowych dla każdej pary.\\ Otrzymujemy:
-$$f_1(x)=$$
-$$f_2(x)=$$
-$$f_3(x)=$$
+\newpage\subsection{Wzory gęstości rozkładów brzegowych}
+Korzystając z faktu, ze rozklady brzegowe wektora normalnego dwuwymiarowego
+$$(X_1, X_2)\backsim N(\mu_1, \mu_2, \sigma_1, \sigma_2, \rho)$$ 
+sa rozkladami normalnymi jednowymiarowymi
+$$X_1\backsim N(\mu_1, \sigma_1^2), X_2\backsim N(\mu_2, \sigma_2^2)$$
+wykorzystamy gestosci nastepujacych rozkladow:
+$$WWL\backsim N(0.0014818927, 3.157575e-04)$$
+$$VGO\backsim N(-0.0012034874, 0.0010172816)$$
+$$DTR\backsim N(0.0005527318, 0.0022550944)$$
+
 Poniżej przedstawiono wykresy gęstości rozkładów brzegowych:
 \begin{figure}[H]
     \centering
